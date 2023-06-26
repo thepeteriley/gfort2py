@@ -1,9 +1,9 @@
 # How many tests do we actually?
 
-The main difficulty in writing gfort2py is handling ths head number of combinations of options that are available in Fortran code. 
+The main difficulty in writing gfort2py is handling this head number of combinations of options that are available in Fortran code. 
 If we consider a simple integer: How many different ways can we declare an integer?
 
-First we must consider where the integer is declared:
+First, we must consider where the integer is declared:
 
 - module variable
 - dummy argument to a procedure
@@ -29,14 +29,14 @@ Is it an array? If so:
 Then of course there are the combinations of the previous options. As well, for arrays its helpful to test multiple dimensions to ensure the
 ordering is correct.
 
-In an ideal world we would test every possible combination of valid options. But in reality we test as many as we can (and that we remember to test).
+In an ideal world, we would test every possible combination of valid options. But in reality, we test as many as we can (and that we remember to test).
 
 
 ## Module variables
 
-The simplest things to test are module variables. The basic structure of these tests is that python should set the value, a Fortran procedure should be
-called to check the value is correct, then the Fortran procedure should alter the variable, and then python checks the final value again. This way
-we check that python can read and set these values and that Fortran can interpret what python set.
+The simplest things to test are module variables. The basic structure of these tests is that Python should set the value, a Fortran procedure should be
+called to check the value is correct, then the Fortran procedure should alter the variable, and then Python checks the final value again. This way
+we check that Python can read and set these values and that Fortran can interpret what Python set.
 
 A basic example:
 
